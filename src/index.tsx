@@ -52,7 +52,7 @@ function ReactHlsPlayer({
         });
       });
 
-      newHls.on(Hls.Events.ERROR, function(event, data) {
+      newHls.on(Hls.Events.ERROR, function (event, data) {
         //eslint-ignore-next-line prettier/prettier
         if (data.fatal) {
           switch (data.type) {
