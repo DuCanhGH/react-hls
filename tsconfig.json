@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "removeComments": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "strict": true,
     "noImplicitAny": true,
     "allowJs": true,

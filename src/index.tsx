@@ -1,16 +1,15 @@
-import React, { useEffect, RefObject } from 'react';
-import Hls, { Config } from 'hls.js';
+import { useEffect, RefObject, VideoHTMLAttributes, createRef } from "react";
+import Hls, { HlsConfig } from "hls.js";
 
-export interface HlsPlayerProps
-  extends React.VideoHTMLAttributes<HTMLVideoElement> {
-  hlsConfig?: Config;
+export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
+  hlsConfig?: HlsConfig;
   playerRef: RefObject<HTMLVideoElement>;
   src: string;
 }
 
 function ReactHlsPlayer({
   hlsConfig,
-  playerRef = React.createRef<HTMLVideoElement>(),
+  playerRef = createRef<HTMLVideoElement>(),
   src,
   autoPlay,
   ...props
@@ -41,7 +40,7 @@ function ReactHlsPlayer({
               ?.play()
               .catch(() =>
                 console.log(
-                  'Unable to autoplay prior to user interaction with the dom.'
+                  "Unable to autoplay prior to user interaction with the dom."
                 )
               );
           }
@@ -80,9 +79,11 @@ function ReactHlsPlayer({
   }, [autoPlay, hlsConfig, playerRef, src]);
 
   // If Media Source is supported, use HLS.js to play video
+  //eslint-disable-next-line jsx-a11y/media-has-caption
   if (Hls.isSupported()) return <video ref={playerRef} {...props} />;
 
   // Fallback to using a regular video player if HLS is supported by default in the user's browser
+  //eslint-disable-next-line jsx-a11y/media-has-caption
   return <video ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
 }
 

@@ -15,9 +15,9 @@ It uses [hls.js](https://github.com/video-dev/hls.js) to play your hls live stre
 ### Using the ReactHlsPlayer component
 
 ```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactHlsPlayer from 'react-hls-player';
+import React from "react";
+import ReactDOM from "react-dom";
+import ReactHlsPlayer from "react-hls-player";
 
 ReactDOM.render(
   <ReactHlsPlayer
@@ -27,7 +27,7 @@ ReactDOM.render(
     width="100%"
     height="auto"
   />,
-  document.getElementById('app')
+  document.getElementById("app")
 );
 ```
 
@@ -36,9 +36,9 @@ ReactDOM.render(
 All available config properties can be found on the [Fine Tuning](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning) section of the Hls.js API.md
 
 ```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactHlsPlayer from 'react-hls-player';
+import React from "react";
+import ReactDOM from "react-dom";
+import ReactHlsPlayer from "react-hls-player";
 
 ReactDOM.render(
   <ReactHlsPlayer
@@ -49,7 +49,7 @@ ReactDOM.render(
       lowLatencyMode: true,
     }}
   />,
-  document.getElementById('app')
+  document.getElementById("app")
 );
 ```
 
@@ -58,8 +58,8 @@ ReactDOM.render(
 The `playerRef` returns a ref to the underlying video component, and as such will give you access to all video component properties and methods.
 
 ```javascript
-import React from 'react';
-import ReactHlsPlayer from 'react-hls-player';
+import React from "react";
+import ReactHlsPlayer from "react-hls-player";
 
 function MyCustomComponent() {
   const playerRef = React.useRef();
@@ -84,14 +84,14 @@ function MyCustomComponent() {
   );
 }
 
-ReactDOM.render(<MyCustomComponent />, document.getElementById('app'));
+ReactDOM.render(<MyCustomComponent />, document.getElementById("app"));
 ```
 
 You can also listen to events of the video
 
 ```javascript
-import React from 'react';
-import ReactHlsPlayer from 'react-hls-player';
+import React from "react";
+import ReactHlsPlayer from "react-hls-player";
 
 function MyCustomComponent() {
   const playerRef = React.useRef();
@@ -101,9 +101,9 @@ function MyCustomComponent() {
       // Do some stuff when the video starts/resumes playing
     }
 
-    playerRef.current.addEventListener('play', fireOnVideoStart);
+    playerRef.current.addEventListener("play", fireOnVideoStart);
 
-    return playerRef.current.removeEventListener('play', fireOnVideoStart);
+    return playerRef.current.removeEventListener("play", fireOnVideoStart);
   }, []);
 
   React.useEffect(() => {
@@ -111,9 +111,9 @@ function MyCustomComponent() {
       // Do some stuff when the video ends
     }
 
-    playerRef.current.addEventListener('ended', fireOnVideoEnd);
+    playerRef.current.addEventListener("ended", fireOnVideoEnd);
 
-    return playerRef.current.removeEventListener('ended', fireOnVideoEnd);
+    return playerRef.current.removeEventListener("ended", fireOnVideoEnd);
   }, []);
 
   return (
@@ -124,7 +124,7 @@ function MyCustomComponent() {
   );
 }
 
-ReactDOM.render(<MyCustomComponent />, document.getElementById('app'));
+ReactDOM.render(<MyCustomComponent />, document.getElementById("app"));
 ```
 
 ## Props
