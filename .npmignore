@@ -1,0 +1,9 @@
+.all-contributorsrc
+.eslintrc
+.prettierrc
+tsconfig.json
+src/
+public/
+node_modules/
+example/
+.vscode/
