@@ -1,6 +1,7 @@
 .all-contributorsrc
 .eslintrc
 .prettierrc
+validatepeerdeps.js
 tsconfig.json
 typings/
 webpack/
