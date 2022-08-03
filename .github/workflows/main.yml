@@ -1,0 +1,32 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    name: Build, lint, and test on Node ${{ matrix.node-version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: ["10.x", "12.x", "14.x", "16.x"]
+        pnpm-version: 7.x.x
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ matrix.pnpm-version }}
+      - name: Use Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+      - name: Lint
+        run: pnpm lint
+      - name: Test
+        run: pnpm test --ci --coverage --maxWorkers=2
+      - name: Build
+        run: pnpm build

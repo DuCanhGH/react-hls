@@ -1,4 +1,9 @@
-import { useEffect, RefObject, VideoHTMLAttributes, createRef } from "react";
+import React, {
+  useEffect,
+  RefObject,
+  VideoHTMLAttributes,
+  createRef,
+} from "react";
 import Hls, { HlsConfig } from "hls.js";
 
 export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
@@ -47,7 +52,8 @@ function ReactHlsPlayer({
         });
       });
 
-      newHls.on(Hls.Events.ERROR, function (event, data) {
+      newHls.on(Hls.Events.ERROR, function(event, data) {
+        //eslint-ignore-next-line prettier/prettier
         if (data.fatal) {
           switch (data.type) {
             case Hls.ErrorTypes.NETWORK_ERROR:

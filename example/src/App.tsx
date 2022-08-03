@@ -1,4 +1,4 @@
-import React, { useState, useRef, KeyboardEvent } from "react";
+import { useState, useRef, KeyboardEvent } from "react";
 
 import HlsPlayer from "../../src";
 
@@ -9,17 +9,14 @@ function App() {
     "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
   );
   const [destroy, setDestroy] = useState(false);
-
   function _handleEnter(e: KeyboardEvent) {
-    if (e.keyCode === 13) {
+    if (e.key === "Enter") {
       setHlsUrl(inputRef?.current?.value ?? "");
     }
   }
-
   function _handleDestroyClick() {
     setDestroy(true);
   }
-
   function _handleToggleControls() {
     if (playerRef?.current?.hasAttribute("controls")) {
       playerRef.current.removeAttribute("controls");
