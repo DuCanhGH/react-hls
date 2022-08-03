@@ -16,18 +16,21 @@ It uses [hls.js](https://github.com/video-dev/hls.js) to play your hls live stre
 
 ```javascript
 import React from "react";
-import ReactDOM from "react-dom";
-import ReactHlsPlayer from "react-hls-player";
+import ReactDOM from "react-dom/client";
+import ReactHlsPlayer from "@ducanh2912/react-hls-player";
 
-ReactDOM.render(
+const container = document.getElementById("app");
+
+if (!container) throw new Error("Failed to find root element.");
+
+ReactDOM.createRoot(container).render(
   <ReactHlsPlayer
     src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
     autoPlay={false}
     controls={true}
     width="100%"
     height="auto"
-  />,
-  document.getElementById("app")
+  />
 );
 ```
 
@@ -37,10 +40,14 @@ All available config properties can be found on the [Fine Tuning](https://github
 
 ```javascript
 import React from "react";
-import ReactDOM from "react-dom";
-import ReactHlsPlayer from "react-hls-player";
+import ReactDOM from "react-dom/client";
+import ReactHlsPlayer from "@ducanh2912/react-hls-player";
 
-ReactDOM.render(
+const container = document.getElementById("app");
+
+if (!container) throw new Error("Failed to find root element.");
+
+ReactDOM.createRoot(container).render(
   <ReactHlsPlayer
     src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
     hlsConfig={{
@@ -48,8 +55,7 @@ ReactDOM.render(
       minAutoBitrate: 0,
       lowLatencyMode: true,
     }}
-  />,
-  document.getElementById("app")
+  />
 );
 ```
 
@@ -59,7 +65,8 @@ The `playerRef` returns a ref to the underlying video component, and as such wil
 
 ```javascript
 import React from "react";
-import ReactHlsPlayer from "react-hls-player";
+import ReactDOM from "react-dom/client";
+import ReactHlsPlayer from "@ducanh2912/react-hls-player";
 
 function MyCustomComponent() {
   const playerRef = React.useRef();
@@ -84,14 +91,19 @@ function MyCustomComponent() {
   );
 }
 
-ReactDOM.render(<MyCustomComponent />, document.getElementById("app"));
+const container = document.getElementById("app");
+
+if (!container) throw new Error("Failed to find root element.");
+
+ReactDOM.createRoot(container).render(<MyCustomComponent />);
 ```
 
 You can also listen to events of the video
 
 ```javascript
 import React from "react";
-import ReactHlsPlayer from "react-hls-player";
+import ReactDOM from "react-dom/client";
+import ReactHlsPlayer from "@ducanh2912/react-hls-player";
 
 function MyCustomComponent() {
   const playerRef = React.useRef();
@@ -124,7 +136,11 @@ function MyCustomComponent() {
   );
 }
 
-ReactDOM.render(<MyCustomComponent />, document.getElementById("app"));
+const container = document.getElementById("app");
+
+if (!container) throw new Error("Failed to find root element.");
+
+ReactDOM.createRoot(container).render(<MyCustomComponent />);
 ```
 
 ## Props
