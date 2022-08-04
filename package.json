@@ -2,7 +2,7 @@
   "name": "@ducanh2912/react-hls-player",
   "author": "Christopher Short, DuCanhGH",
   "description": "A simple and easy to use react component for playing an hls live stream",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "license": "MIT",
   "source": "./src/index.tsx",
   "files": [
