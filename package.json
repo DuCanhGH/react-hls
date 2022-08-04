@@ -23,7 +23,7 @@
     "analyze": "size-limit --why",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "test": "jest --env=jsdom",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "format": "prettier --write ."
   },
   "keywords": [
@@ -41,7 +41,7 @@
     "url": "git+https://github.com/DuCanhGH/react-hls.git"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=16.8.0"
   },
   "devDependencies": {
     "@size-limit/preset-big-lib": "8.0.0",
