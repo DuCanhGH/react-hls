@@ -32,12 +32,7 @@ module.exports = {
     "react/prop-types": 0,
     "react/react-in-jsx-scope": "off",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": [
-      "error",
-      {
-        endOfLine: "crlf",
-      },
-    ],
+    "prettier/prettier": "off",
     "no-irregular-whitespace": "off",
     indent: ["error", 2, { SwitchCase: 1 }],
     "linebreak-style": "off",
