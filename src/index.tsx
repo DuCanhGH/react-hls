@@ -51,8 +51,7 @@ function ReactHlsPlayer({
           }
         });
       });
-
-      newHls.on(Hls.Events.ERROR, function(event, data) {
+      newHls.on(Hls.Events.ERROR, function (event, data) {
         //eslint-ignore-next-line prettier/prettier
         if (data.fatal) {
           switch (data.type) {
@@ -85,8 +84,11 @@ function ReactHlsPlayer({
   }, [autoPlay, hlsConfig, playerRef, src]);
 
   // If Media Source is supported, use HLS.js to play video
-  //eslint-disable-next-line jsx-a11y/media-has-caption
-  if (typeof window !== "undefined" && Hls.isSupported()) return <video ref={playerRef} {...props} />;
+
+  if (typeof window !== "undefined" && Hls.isSupported()) {
+    //eslint-disable-next-line jsx-a11y/media-has-caption
+    return <video ref={playerRef} {...props} />;
+  }
 
   // Fallback to using a regular video player if HLS is supported by default in the user's browser
   //eslint-disable-next-line jsx-a11y/media-has-caption
