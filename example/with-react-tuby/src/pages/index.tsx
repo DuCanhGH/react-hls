@@ -4,7 +4,7 @@ import HlsPlayer from "../../../../src/index";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const Player = dynamic(() => import("react-tuby").then(react_tuby => react_tuby.Player), { ssr: false });
+const Player = dynamic(() => import("../components/Player"), { ssr: false });
 
 const Home: NextPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
