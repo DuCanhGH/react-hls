@@ -1,6 +1,6 @@
 import { useState, useRef, KeyboardEvent } from "react";
 
-import HlsPlayer from "../../src";
+import HlsPlayer from "../../../src";
 
 function App() {
   const playerRef = useRef<HTMLVideoElement>(null);
