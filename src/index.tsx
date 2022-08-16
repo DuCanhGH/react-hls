@@ -1,5 +1,6 @@
 import React, {
   useEffect,
+  useState,
   RefObject,
   VideoHTMLAttributes,
   createRef,
@@ -19,26 +20,22 @@ function ReactHlsPlayer({
   autoPlay,
   ...props
 }: HlsPlayerProps) {
+  const [supported, setSupported] = useState(false);
   useEffect(() => {
     let hls: Hls;
-
     function _initPlayer() {
       if (hls != null) {
         hls.destroy();
       }
-
       const newHls = new Hls({
         enableWorker: false,
         ...hlsConfig,
       });
-
       if (playerRef.current != null) {
         newHls.attachMedia(playerRef.current);
       }
-
       newHls.on(Hls.Events.MEDIA_ATTACHED, () => {
         newHls.loadSource(src);
-
         newHls.on(Hls.Events.MANIFEST_PARSED, () => {
           if (autoPlay) {
             playerRef?.current
@@ -67,15 +64,13 @@ function ReactHlsPlayer({
           }
         }
       });
-
       hls = newHls;
     }
-
     // Check for Media Source support
-    if (typeof window !== "undefined") {
-      Hls.isSupported() && _initPlayer();
+    if (Hls.isSupported()) {
+      _initPlayer();
+      setSupported(true);
     }
-
     return () => {
       if (hls != null) {
         hls.destroy();
@@ -83,16 +78,9 @@ function ReactHlsPlayer({
     };
   }, [autoPlay, hlsConfig, playerRef, src]);
 
-  // If Media Source is supported, use HLS.js to play video
-
-  if (typeof window !== "undefined" && Hls.isSupported()) {
-    //eslint-disable-next-line jsx-a11y/media-has-caption
-    return <video ref={playerRef} {...props} />;
-  }
-
-  // Fallback to using a regular video player if HLS is supported by default in the user's browser
+  // If Media Source is supported, use HLS.js to play video and fallback to using a regular video player if HLS is not supported in the user's browser
   //eslint-disable-next-line jsx-a11y/media-has-caption
-  return <video ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
+  return supported ? <video ref={playerRef} {...props} /> : <video ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
 }
 
 export default ReactHlsPlayer;
