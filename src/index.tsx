@@ -4,6 +4,7 @@ import React, {
   RefObject,
   VideoHTMLAttributes,
   createRef,
+  FC,
 } from "react";
 import Hls, { HlsConfig } from "hls.js";
 
@@ -13,13 +14,13 @@ export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
 }
 
-function ReactHlsPlayer({
+const ReactHlsPlayer: FC<HlsPlayerProps> = ({
   hlsConfig,
   playerRef = createRef<HTMLVideoElement>(),
   src,
   autoPlay,
   ...props
-}: HlsPlayerProps) {
+}) => {
   const [supported, setSupported] = useState(false);
   useEffect(() => {
     let hls: Hls;
@@ -80,7 +81,11 @@ function ReactHlsPlayer({
 
   // If Media Source is supported, use HLS.js to play video and fallback to using a regular video player if HLS is not supported in the user's browser
   //eslint-disable-next-line jsx-a11y/media-has-caption
-  return supported ? <video ref={playerRef} {...props} /> : <video ref={playerRef} src={src} autoPlay={autoPlay} {...props} />;
-}
+  return supported ? (
+    <video ref={playerRef} {...props} />
+  ) : (
+    <video ref={playerRef} src={src} autoPlay={autoPlay} {...props} />
+  );
+};
 
 export default ReactHlsPlayer;
