@@ -11,6 +11,7 @@
     "rootDir": "./src",
     "strict": true,
     "noImplicitReturns": true,
+    "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,

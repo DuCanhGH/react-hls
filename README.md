@@ -1,14 +1,14 @@
 # React HLS Player
 
-![NPM Downloads](https://img.shields.io/npm/dm/react-hls-player?style=flat-square)
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/react-hls-player)
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-hls-player)
+![NPM Downloads](https://img.shields.io/npm/dm/@ducanh2912/react-hls-player?style=flat-square)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/@ducanh2912/react-hls-player)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@ducanh2912/react-hls-player)
 
 ## Introduction
 
 `react-hls-player` is a simple HLS live stream player.
-It uses [hls.js](https://github.com/video-dev/hls.js) to play your hls live stream if your browser supports `html 5 video` and `MediaSource Extension`.
+It uses [hls.js](https://github.com/video-dev/hls.js) to play your hls live streams if your browser supports `HTML5 video` and `MediaSource Extension`.
 
 ## Examples
 
@@ -36,7 +36,7 @@ ReactDOM.createRoot(container).render(
 
 ### Using hlsConfig (advanced use case)
 
-All available config properties can be found on the [Fine Tuning](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning) section of the Hls.js API.md
+All available config properties can be found on the [Fine Tuning](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning) section of Hls.js's API.md
 
 ```javascript
 import React from "react";
@@ -155,7 +155,7 @@ All [video properties](https://www.w3schools.com/tags/att_video_poster.asp) are 
 | width `Number`           | Video width. Defaults to `100%`                                                                                         |
 | height `Number`          | Video height. Defaults to `auto`                                                                                        |
 | hlsConfig `Object`       | `hls.js` config, you can see all config [here](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning) |
-| playerRef `React Ref`    | Pass in your own ref to interact with the video player directly. This will override the default ref.                    |
+| playerRef `RefObject`    | Pass in your own ref to interact with the video player directly. This will override the default ref.                    |
 
 ### Additional Notes
 
@@ -171,7 +171,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://www.marcochavez.info/"><img src="https://avatars0.githubusercontent.com/u/43889446?v=4" width="100px;" alt=""/><br /><sub><b>Marco Chavez</b></sub></a><br /><a href="https://github.com/devcshort/react-hls/commits?author=mxrcochxvez" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.chrisrshort.com"><img src="https://avatars3.githubusercontent.com/u/13677134?v=4" width="100px;" alt=""/><br /><sub><b>Chris Short</b></sub></a><br /><a href="https://github.com/devcshort/react-hls/commits?author=devcshort" title="Code">💻</a> <a href="#projectManagement-devcshort" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://www.chrisrshort.com"><img src="https://avatars3.githubusercontent.com/u/13677134?v=4" width="100px;" alt=""/><br /><sub><b>Chris Short</b></sub></a><br /><a href="https://github.com/devcshort/react-hls/commits?author=devcshort" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DuCanhGH"><img src="https://avatars.githubusercontent.com/u/75556609?v=4" width="100px;" alt=""/><br /><sub><b>DuCanhGH</b></sub></a><br /><a href="https://github.com/DuCanhGH/react-hls/commits?author=DuCanhGH" title="Code">💻</a></td>
   </tr>
 </table>
 
