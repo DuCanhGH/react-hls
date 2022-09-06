@@ -10,7 +10,7 @@ import Hls, { HlsConfig } from "hls.js";
 
 export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
   hlsConfig?: HlsConfig;
-  playerRef: RefObject<HTMLVideoElement>;
+  playerRef?: RefObject<HTMLVideoElement>;
   src: string;
 }
 
