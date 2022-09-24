@@ -74,10 +74,11 @@ const ReactHlsPlayer: FC<HlsPlayerProps> = ({
   }, [autoPlay, hlsConfig, playerRef, src]);
 
   // If Media Source is supported, use HLS.js to play video and fallback to using a regular video player if HLS is not supported in the user's browser
-  //eslint-disable-next-line jsx-a11y/media-has-caption
   return supported ? (
+    // eslint-disable-next-line jsx-a11y/media-has-caption
     <video ref={playerRef} {...props} />
   ) : (
+    // eslint-disable-next-line jsx-a11y/media-has-caption
     <video ref={playerRef} src={src} autoPlay={autoPlay} {...props} />
   );
 };

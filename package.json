@@ -22,7 +22,7 @@
     "dev": "microbundle watch",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "lint": "eslint src --cache --cache-location ./node_modules/.cache/eslint --ext ts,tsx,js,jsx,cjs,mjs",
     "test": "jest --env=jsdom",
     "typecheck": "tsc",
     "prepublishOnly": "npm run build",
