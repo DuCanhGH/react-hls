@@ -1,12 +1,6 @@
-import React, {
-  useEffect,
-  useState,
-  RefObject,
-  VideoHTMLAttributes,
-  createRef,
-  FC,
-} from "react";
-import Hls, { HlsConfig } from "hls.js";
+import React, { useEffect, useState, createRef } from "react";
+import type { RefObject, VideoHTMLAttributes, FC } from "react";
+import Hls, { type HlsConfig } from "hls.js";
 
 export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
   hlsConfig?: HlsConfig;
