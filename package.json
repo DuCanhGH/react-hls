@@ -10,15 +10,15 @@
   ],
   "exports": {
     "types": "./dist/index.d.ts",
-    "require": "./dist/index.js",
-    "default": "./dist/index.modern.mjs"
+    "require": "./dist/ducanh2912-react-hls.js",
+    "default": "./dist/ducanh2912-react-hls.modern.mjs"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.module.js",
-  "unpkg": "./dist/index.umd.js",
+  "main": "./dist/ducanh2912-react-hls.js",
+  "module": "./dist/ducanh2912-react-hls.module.js",
+  "unpkg": "./dist/ducanh2912-react-hls.umd.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "microbundle",
+    "build": "rimraf dist && microbundle",
     "dev": "microbundle watch",
     "size": "size-limit",
     "analyze": "size-limit --why",
@@ -70,6 +70,7 @@
     "prettier": "2.7.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "rimraf": "3.0.2",
     "size-limit": "8.1.0",
     "ts-jest": "29.0.2",
     "tslib": "2.4.0",

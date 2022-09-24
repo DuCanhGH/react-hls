@@ -24,6 +24,7 @@ specifiers:
   prettier: 2.7.1
   react: 18.2.0
   react-dom: 18.2.0
+  rimraf: 3.0.2
   size-limit: 8.1.0
   ts-jest: 29.0.2
   tslib: 2.4.0
@@ -54,6 +55,7 @@ devDependencies:
   prettier: 2.7.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  rimraf: 3.0.2
   size-limit: 8.1.0
   ts-jest: 29.0.2_jksntdpmkmo5cthob65gehuuvi
   tslib: 2.4.0
