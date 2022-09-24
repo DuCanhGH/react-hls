@@ -37,7 +37,7 @@ module.exports = {
     "prettier/prettier": "off",
     "no-irregular-whitespace": "off",
     "no-unused-vars": "off",
-    indent: ["error", 2, { SwitchCase: 1 }],
+    indent: "off",
     "linebreak-style": "off",
     semi: ["error", "always"],
     "eol-last": ["error", "always"],
