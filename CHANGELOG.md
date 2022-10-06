@@ -1,3 +1,10 @@
+## [3.3.2](https://github.com/DuCanhGH/react-hls/compare/v3.3.1...v3.3.2) (2022-10-06)
+
+
+### Bug Fixes
+
+* nothing ([3be363f](https://github.com/DuCanhGH/react-hls/commit/3be363fb3967a2b2ba93e270dfc3ed8f4dacc264))
+
 # 1.0.0 (2022-10-06)
 
 
