@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "react-hooks", "@typescript-eslint"],
+  plugins: ["react", "react-hooks", "@typescript-eslint", "simple-import-sort"],
   settings: {
     react: {
       version: "detect",
@@ -49,5 +49,7 @@ module.exports = {
         ignoreReadBeforeAssign: false,
       },
     ],
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
   },
 };
