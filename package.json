@@ -26,6 +26,7 @@
     "test": "jest --env=jsdom",
     "typecheck": "tsc",
     "prepublishOnly": "npm run build",
+    "prepare": "husky install",
     "format": "prettier --write ."
   },
   "keywords": [
@@ -71,6 +72,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-simple-import-sort": "8.0.0",
     "hls.js": "1.2.4",
+    "husky": "8.0.1",
     "jest": "29.1.2",
     "jest-environment-jsdom": "29.1.2",
     "microbundle": "0.15.1",

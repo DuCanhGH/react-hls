@@ -1,5 +1,5 @@
 import Hls, { type HlsConfig } from "hls.js";
-import type { FC,RefObject, VideoHTMLAttributes } from "react";
+import type { FC, RefObject, VideoHTMLAttributes } from "react";
 import React, { useEffect, useRef, useState } from "react";
 
 export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
