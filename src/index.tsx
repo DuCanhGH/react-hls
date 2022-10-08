@@ -1,6 +1,6 @@
 import Hls, { type HlsConfig } from "hls.js";
 import type { FC,RefObject, VideoHTMLAttributes } from "react";
-import React, { createRef,useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
   hlsConfig?: HlsConfig;
@@ -10,12 +10,14 @@ export interface HlsPlayerProps extends VideoHTMLAttributes<HTMLVideoElement> {
 
 const ReactHlsPlayer: FC<HlsPlayerProps> = ({
   hlsConfig,
-  playerRef = createRef<HTMLVideoElement>(),
+  playerRef: passedPlayerRef,
   src,
   autoPlay,
   ...props
 }) => {
   const [supported, setSupported] = useState(false);
+  const myRef = useRef<HTMLVideoElement>(null);
+  const playerRef = passedPlayerRef ?? myRef;
   useEffect(() => {
     let hls: Hls;
     function _initPlayer() {
