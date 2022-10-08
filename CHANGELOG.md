@@ -1,3 +1,10 @@
+## [3.3.3](https://github.com/DuCanhGH/react-hls/compare/v3.3.2...v3.3.3) (2022-10-08)
+
+
+### Bug Fixes
+
+* player should now stop rerendering on state change without playerRef ([0d2104b](https://github.com/DuCanhGH/react-hls/commit/0d2104be5b8e12f4d0bc5ada9d4ccfa6abac4bcf))
+
 ## [3.3.2](https://github.com/DuCanhGH/react-hls/compare/v3.3.1...v3.3.2) (2022-10-06)
 
 
