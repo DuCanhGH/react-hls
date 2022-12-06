@@ -6,7 +6,20 @@ module.exports = {
     { name: "beta", channel: "beta", prerelease: true },
   ],
   plugins: [
-    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        preset: "angular",
+        releaseRules: [
+          { type: "refactor", scope: "core-*", release: "minor" },
+          { type: "docs", scope: "README", release: "patch" },
+          { type: "refactor", release: "patch" },
+          { type: "chore", release: "patch" },
+          { type: "fix", scope: "chore-*", release: false },
+          { scope: "no-release", release: false },
+        ],
+      },
+    ],
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/npm",
