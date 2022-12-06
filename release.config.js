@@ -14,7 +14,7 @@ module.exports = {
           { type: "refactor", scope: "core-*", release: "minor" },
           { type: "docs", scope: "README", release: "patch" },
           { type: "refactor", release: "patch" },
-          { type: "chore", release: "patch" },
+          { type: "chore", scope: "deps*", release: "patch" },
           { type: "fix", scope: "chore-*", release: false },
           { scope: "no-release", release: false },
         ],
