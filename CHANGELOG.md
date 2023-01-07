@@ -1,3 +1,5 @@
+## [3.3.4](https://github.com/DuCanhGH/react-hls/compare/v3.3.3...v3.3.4) (2022-12-06)
+
 ## [3.3.3](https://github.com/DuCanhGH/react-hls/compare/v3.3.2...v3.3.3) (2022-10-08)
 
 
